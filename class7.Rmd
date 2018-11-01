@@ -1,0 +1,37 @@
+---
+title: "class7"
+output: github_document
+---
+```{r}
+source("http://tinyurl.com/rescale-R")
+
+# write a both_na() function
+x <- c( 1, 2, NA, 3, NA)
+y <- c(NA, 3, NA, 3, 4)
+is.na(x) #finds which are 'na'
+is.na(y)
+is.na(x) & is.na(y) #finds which are 'na' in both
+sum(is.na(x) & is.na(y)) #how many are 'na' in same position
+# function for NA finding
+both_na <- function(x, y) {
+  sum( is.na(x) & is.na(y) )
+}
+both_na(x,y)
+
+x <- c(NA, NA, NA)
+y1 <- c( 1, NA, NA)
+y2 <- c( 1, NA, NA, NA)
+
+# Find matching genes (intersect of two data.frames)
+# Simplify further to single vectors
+# Simplify further to single vectors
+x <- df1$IDs
+y <- df2$IDs
+intersect(x,y)
+inds <- x %in% y # tests if values of x are in y
+x[inds]
+y[y %in% x]
+df1[df1$IDs %in% df2$IDs, ] 
+df2[df2$IDs %in% df1$IDs, ]
+```
+
