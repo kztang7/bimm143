@@ -1,0 +1,12 @@
+---
+title: "ukfood"
+output: html_document
+---
+```{r}
+x <- read.csv("UK_foods.csv")
+rownames(x) <- x[,1]
+x <- x[,-1]
+head(x)
+dim(x)
+```
+
